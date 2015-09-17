@@ -1,0 +1,92 @@
+Writing a TODO app
+with Go, TDD, REST, and ReactJS
+
+Christophe Eble
+Chief Architect at Nexway France
+@christopheeble
+
+* Agenda
+
+- TDD at the heart of Go development.
+- Building a REST API with Go.
+
+* TODO
+
+We're going to build a fantastic TODO app, yay!
+
+* TDD first!
+
+.image redgreenrefactor.png 314 300
+
+1. Write a unit test
+2. Run it and watch it fail :/
+3. Write business code to make the test pass :)
+4. Re-run the test and watch it pass (or not)
+
+* import "testing"
+
+Go's standard library offers a pretty decent testing framework
+
+.code ../task/task_test.go /TestCreate/,/^}/
+
+Running all the tests for a project
+
+    $ go test github.com/chreble/todo/...
+    ok      github.com/chreble/todo/task    0.001s
+
+* Live testing
+
+Running all your tests while coding.
+
+    $ go get github.com/eaburns/Watch
+    $ cd $GOPATH/src/github.com/chreble/todo/task
+
+    $ Watch -t go test
+    go test
+    PASS
+    ok      github.com/chreble/todo/task    0.001s
+    2015-09-16 16:15:16.941600707 +0200 CEST
+    ...
+
+* Rest API
+* Rest = (HTTP + JSON) we'll not get into HAL, sorry Jalal
+
+Go provides an excellent `net/http` package
+
+.code http.go /func main/,/^}/
+
+And a convenient JSON package
+
+.code http.go /func handler/,/^}/
+
+* How to build our Todo service?
+
+* Choose your router!
+It's up to you!
+
+My personal choice
+
+.link https://github.com/julienschmidt/httprouter
+This router is optimized for high performance and a small memory footprint.
+
+.image happy.png 225 300
+
+* Usage
+
+Register handlers
+
+.code server1.go
+
+* Create handlers
+
+Example
+
+.code ../server/server.go /func CreateTask/,/^}/
+
+* Create business logic
+
+.code ../task/task.go /Create/,/^}/
+
+* Get the code!
+
+.link http://github.com/chreble/todo
