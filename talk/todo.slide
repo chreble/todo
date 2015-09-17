@@ -1,5 +1,5 @@
 Writing a TODO app
-with Go, TDD, REST, and ReactJS
+with Go, TDD, REST
 
 Christophe Eble
 Chief Architect at Nexway France
@@ -9,10 +9,6 @@ Chief Architect at Nexway France
 
 - TDD at the heart of Go development.
 - Building a REST API with Go.
-
-* TODO
-
-We're going to build a fantastic TODO app, yay!
 
 * TDD first!
 
@@ -75,7 +71,7 @@ This router is optimized for high performance and a small memory footprint.
 
 Register handlers
 
-.code server1.go
+.code ../server/server.go /func RegisterHandlers/,/^}/
 
 * Create handlers
 
