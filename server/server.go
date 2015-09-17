@@ -22,7 +22,7 @@ func RegisterHandlers() *httprouter.Router {
 	return rt
 }
 
-// ListTask handles GET requests on /tasks
+// ListTasks handles GET requests on /tasks
 func ListTasks(w http.ResponseWriter, req *http.Request, p httprouter.Params) {
 	res := tasks.All()
 
