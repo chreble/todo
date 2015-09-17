@@ -45,17 +45,6 @@ Running all your tests while coding.
     2015-09-16 16:15:16.941600707 +0200 CEST
     ...
 
-* Rest API
-* Rest = (HTTP + JSON) we'll not get into HAL, sorry Jalal
-
-Go provides an excellent `net/http` package
-
-.code http.go /func main/,/^}/
-
-And a convenient JSON package
-
-.code http.go /func handler/,/^}/
-
 * How to build our Todo service?
 
 * Choose your router!
