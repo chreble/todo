@@ -36,15 +36,15 @@ func ListTasks(w http.ResponseWriter, req *http.Request, p httprouter.Params) {
 func CreateTask(w http.ResponseWriter, req *http.Request, p httprouter.Params) {
     tsk := task.Task{}
     var err error
+
+    // Unmarshal JSON to Task Object
     if err = json.NewDecoder(req.Body).Decode(&tsk); err != nil {
         w.WriteHeader(400)
         return
     }
+
+    // Create task
     t := tasks.Create(tsk)
-    if err != nil {
-        w.WriteHeader(400)
-        return
-    }
 
     w.Header().Set("Content-Type", "application/json")
     w.WriteHeader(200)

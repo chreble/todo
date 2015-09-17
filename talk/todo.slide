@@ -18,6 +18,7 @@ Chief Architect at Nexway France
 2. Run it and watch it fail :/
 3. Write business code to make the test pass :)
 4. Re-run the test and watch it pass (or not)
+5. Repeat until it's all green
 
 * import "testing"
 
